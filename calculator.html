@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="calci.css">
+    <script src="calci.js"></script>
+
+</head>
+<body>
+
+   <div class="nav">
+    
+    <h1><img src="CALLOGO.png" style="border-radius:10px" width="70px" height="70px"><span>All-In-One Calculator</span></h1>
+   </div>
+ 
+    <div id="main">
+        <form name="form1">
+            <input type="text" id="ipbox" name="answer">
+            <input type="button" id="1" value="1" onclick="form1.answer.value+='1'">
+            <input type="button" id="2" value="2" onclick="form1.answer.value+='2'">
+            <input type="button" id="3" value="3" onclick="form1.answer.value+='3'">
+            <input type="button" id="+" value="+" onclick="form1.answer.value+='+'">
+<br>
+            <input type="button" id="4" value="4" onclick="form1.answer.value+='4'">
+            <input type="button" id="5" value="5" onclick="form1.answer.value+='5'">
+            <input type="button" id="6" value="6" onclick="form1.answer.value+='6'">
+            <input type="button" id="-" value="-" onclick="form1.answer.value+='-'">
+<br>
+            <input type="button" id="7" value="7" onclick="form1.answer.value+='7'">
+            <input type="button" id="8" value="8" onclick="form1.answer.value+='8'">
+            <input type="button" id="9" value="9" onclick="form1.answer.value+='9'">
+            <input type="button" id="*" value="*" onclick="form1.answer.value+='*'">
+<br>
+            <input type="button" id="." value="." onclick="form1.answer.value+='.'">
+            <input type="button" id="0" value="0" onclick="form1.answer.value+='0'">
+            <input type="button" id="/" value="/" onclick="form1.answer.value+='/'">
+            <input type="button" id="=" value="=" onclick="form1.answer.value=eval(form1.answer.value)">
+ <br>
+           <input type="button" value="All clear" onclick="form1.answer.value=' '" id="clear"  >        
+        </form>
+    </div>
+
+<div id="mainflex">
+
+    <div id="flex1" class="flexitem">
+ <!-- //temp -->
+ <div id="convert1">
+    <h1 class="flxhead">Temperature conversions</h1>
+    
+    <fieldset>
+        <legend>select whether temperature entered is in fahrenheit or celcius:</legend>
+        <input style="background-color:rgba(247, 170, 217, 0.759);border: 2px solid pink;border-radius:5px;height:20px;" type="text" id="temp" name="tempv"><br>
+        <div>
+          <input  type="radio" id="r1" name="drone" value="fah"
+                 checked>
+          <label for="r1">fah</label>
+        </div>
+    
+        <div>
+          <input type="radio" id="r2" name="drone" value="cel">
+          <label for="r2">cel</label>
+        </div>
+        <button style="background-color:rgba(128, 9, 82, 0.759);border: 2px solid rgb(239, 70, 160);border-radius:5px;height:30px;" id="conb1" onclick="convert11()">convert</button>
+        <p id="op1"></p>
+    </fieldset>
+   </div>
+    </div>
+
+    <div id="flex2" class="flexitem">
+        
+   <!-- //age -->
+ 
+   <div id="convert2">
+  
+  <h1 class="flxhead"> Age calculator</h1> 
+    <fieldset>
+        <legend>Enter your date of birth</legend>
+    Select date below:
+    <br><br>
+    <input style="background-color:rgba(247, 170, 217, 0.759);border: 2px solid pink;border-radius:5px;height:20px;" type="date" id="date" name="datee"><br><br>
+    <button onclick="datecon()" style="background-color:rgba(128, 9, 82, 0.759);border: 2px solid rgb(239, 70, 160);border-radius:5px;height:30px;">Get age</button>
+    <p id="op2"></p>
+</fieldset>
+   </div>
+
+    </div>
+
+    <div id="flex3" class="flexitem">
+
+<!-- grade -->
+<!-- percentage -->
+<div id="grades">
+    <h1 class="flxhead">Grade calculator</h1>
+    <fieldset>
+      
+        <legend>Enter your grades</legend>
+   Marks obtained <br><input style="background-color:rgba(247, 170, 217, 0.759);border: 2px solid pink;border-radius:5px;height:20px;" type="number" id="grade">
+  <br> Total marks <br> <input style="background-color:rgba(247, 170, 217, 0.759);border: 2px solid pink;border-radius:5px;height:20px;" type="number" id="total">
+    <button onclick="percentage()" style="background-color:rgba(128, 9, 82, 0.759);border: 2px solid rgb(239, 70, 160);border-radius:5px;height:30px;">Get percentage</button><br>
+   
+
+    <!-- cgpa -->
+    
+    percentage <br> <input style="background-color:rgba(247, 170, 217, 0.759);border: 2px solid pink;border-radius:5px;height:20px;" type="number" id="per">
+    <button onclick="cgpa()" style="background-color:rgba(128, 9, 82, 0.759);border: 2px solid rgb(239, 70, 160);border-radius:5px;height:30px;">Get cgpa</button><br>
+    
+     <!-- gpa -->
+    
+     percentage <br> <input style="background-color:rgba(247, 170, 217, 0.759);border: 2px solid pink;border-radius:5px;height:20px;" type="number" id="per2">
+     <button onclick="gpa()" style="background-color:rgba(128, 9, 82, 0.759);border: 2px solid rgb(239, 70, 160);border-radius:5px;height:30px;">Get gpa</button>
+  
+        <p id="oper"></p>
+
+    </fieldset>
+</div>
+
+    </div>
+
+    <div id="flex4" class="flexitem">
+
+        
+<!-- bms -->
+<H1 class="flxhead">BMI(body mass index) <br>calculator </H1>
+<fieldset>
+    <legend>Enter height(m) and weight(kg)</legend>
+<label for="wt">Body weight(Kg)</label>
+<input style="background-color:rgba(247, 170, 217, 0.759);border: 2px solid pink;border-radius:5px;height:20px;" type="number" id="wt"><br><br>
+
+<label for="ht">Height(m)</label>
+<input style="background-color:rgba(247, 170, 217, 0.759);border: 2px solid pink;border-radius:5px;height:20px;" type="number" id="ht"><br><br>
+
+<button onclick="bmi()" style="background-color:rgba(128, 9, 82, 0.759);border: 2px solid rgb(239, 70, 160);border-radius:5px;height:30px;">Calculate BMI</button>
+
+<P ID="bmip"></P>
+</fieldset>
+    </div>
+
+
+    <div id="flex5" class="flexitem">      
+<!-- body fat -->
+<div>
+    <h1 class="flxhead">Body Fat Calculator</h1>
+    <!-- <div> -->
+        <fieldset>
+            <legend>Enter weight(kg) ,height(m) and age</legend>
+<input type="radio" id="male" name="bfc">
+<label for="male">male</label>
+<input type="radio" id="female" name="bfc">
+<label for="female">female</label>
+    <!-- </div> -->
+<br>
+    <label for="wt1">Body weight(Kg)</label>
+    <input style="background-color:rgba(247, 170, 217, 0.759);border: 2px solid pink;border-radius:5px;height:20px;" type="number" id="wt1"><br><br>
+    
+    <label for="ht1">Height(m)</label>
+    <input style="background-color:rgba(247, 170, 217, 0.759);border: 2px solid pink;border-radius:5px;height:20px;" type="number" id="ht1"><br><br>
+
+    <label for="age">Age</label>
+    <input style="background-color:rgba(247, 170, 217, 0.759);border: 2px solid pink;border-radius:5px;height:20px;" type="number" id="age"><br><br>
+    
+    <button onclick="bodyfat()" style="background-color:rgba(128, 9, 82, 0.759);border: 2px solid rgb(239, 70, 160);border-radius:5px;height:30px;">Calculate Body Fat</button>
+    
+    <P ID="bfatp"></P>
+</fieldset>
+</div>
+
+    </div>
+
+</div>
+
+
+
+
+
+</body>
+</html>
